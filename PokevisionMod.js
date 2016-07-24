@@ -233,10 +233,15 @@ function blip() {
 	audio.play();
 }
 
+function setIntervalAndExecute(fn, t) {
+    fn();
+    return(setInterval(fn, t));
+}
+
 function search () {
 	console.log("Scanning...");
 	App.home.findNearbyPokemon(App.home.latitude, App.home.longitude, !0);
-	setTimeout(search(),31000); //Scans at websites desired delay, please don't change this!		
+	var i = setIntervalAndExecute(search(),31000); //Scans at websites desired delay, please don't change this!	
 }
 
 function foundPokemon(pokemon,d) {
@@ -269,6 +274,7 @@ function getDistanceMetres(lat1,lon1,lat2,lon2) {
 function deg2rad(deg) {
   return deg * (Math.PI/180);
 }
+
 
 
 //The cool stuff
