@@ -236,7 +236,7 @@ function blip() {
 function search () {
 	console.log("Scanning...");
 	App.home.findNearbyPokemon(App.home.latitude, App.home.longitude, !0);
-	//setTimeout(search(),31000); //Scans at websites desired delay, please don't change this!	
+	setTimeout(search(),31000); //Scans at websites desired delay, please don't change this!	
 }
 
 function foundPokemon(pokemon,d) {
